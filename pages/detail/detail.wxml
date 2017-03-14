@@ -2,7 +2,7 @@
 <view class="container">
   <view class="topic-detail">
     <view class="topic-owner">
-        <image class="owner-avatar" src="{{detail.owners[0].images['50']}}" id="{{detail.member.id}}" bindtap="showUserInfo"></image>
+        <image class="owner-avatar" src="{{detail.owners[0].images['100']}}" id="{{detail.member.id}}" bindtap="showUserInfo"></image>
         <view class="topic-tit">{{detail.name}}</view>
     </view>
     <view class="topic-info">
@@ -10,7 +10,10 @@
         <text class="topic-created">{{detail.created_on}}</text>
     </view>
     <view class="topic-desc">
-        <text>{{detail.modules}}</text>
+        <block wx:for="{{content}}">
+           <view>{{item.text}}</view>
+           <image class="content-image" src="{{item.src}}"></image>
+        </block>
     </view>
   </view>
   <view class="replies">

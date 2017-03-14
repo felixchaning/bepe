@@ -84,3 +84,8 @@
     word-break: normal; 
     color:#999;
 }
+
+.content-image {
+    width: 320px;
+    height: 320px;
+}

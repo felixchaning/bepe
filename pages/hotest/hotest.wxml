@@ -13,7 +13,7 @@
                             <text class="member-nickname">{{item.owners[0].display_name}}</text>
                         </view>
                     </view>
-                    <view class="reply-num">{{item.stats.views}}</view>
+                    <view class="reply-num">{{item.stats.comments}}</view>
                 </view>
             </view>
         </view>

@@ -2,11 +2,13 @@
 var Util = require('../../utils/util.js');
 var Api = require('../../utils/api.js');
 
+
 Page({
   data: {
     title: '话题详情',
     detail: {},
     replies: [],
+    content:[],
     hidden: false
   },
   fetchDetail: function(id) {
@@ -17,8 +19,9 @@ Page({
         // console.log(res.data)
         // res.data[0].created = Util.formatTime(Util.transLocalTime(res.data[0].created));
         that.setData({
-          detail: res.data.project
-        })
+          detail: res.data.project,
+          content: res.data.project.modules
+          })
       }
     })
     that.fetchReplies(id);
@@ -28,7 +31,7 @@ Page({
     wx.request({
       url: Api.getReplies() + id + '/comments?' + Api.clientID,
       success: function(res) {
-        console.log(res.data);
+        // console.log(res.data);
         // res.data.forEach(function(item) {
         //   item.created = Util.formatTime(Util.transLocalTime(item.created_on));
         // })
